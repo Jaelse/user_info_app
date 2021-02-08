@@ -5,6 +5,7 @@ import 'package:user_info_app/blocs/users_screen/users_screen_event.dart';
 import 'package:user_info_app/blocs/users_screen/users_screen_state.dart';
 import 'package:user_info_app/domain/entity/user_info_entity.dart';
 import 'package:user_info_app/domain/repository/user_info_repository.dart';
+import 'package:user_info_app/screens/user_info/user_info.dart';
 import 'package:user_info_app/screens/user_info_form_screen/user_info_form_screen.dart';
 
 class UsersScreen extends StatelessWidget {
@@ -95,8 +96,13 @@ class UsersScreen extends StatelessWidget {
     return ListView.builder(
         itemCount: users.length,
         itemBuilder: (BuildContext context, int index) {
-          return ListTile(
-            title: Text(users[index].name),
+          return GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(UserInfoScreen.route(users[index]));
+            },
+            child: ListTile(
+              title: Text(users[index].name),
+            ),
           );
         });
   }

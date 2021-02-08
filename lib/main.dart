@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:user_info_app/data/data.dart';
 import 'package:user_info_app/domain/repository/user_info_repository.dart';
-import 'package:user_info_app/screens/user_info_form_screen/user_info_form_screen.dart';
 import 'package:user_info_app/screens/users_screen/UsersScreen.dart';
 
 void main() async {
